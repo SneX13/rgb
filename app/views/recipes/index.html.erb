@@ -1,0 +1,29 @@
+<ul class="media-list">
+  <% @recipes.each do |recipe| %>
+  <li class="media row">
+    <div class="media-left col-xs-3 col-s-2 col-md-1">
+      <a href="#">
+        <img class="media-object" src="http://placehold.it/50x50" alt="placeholder-kad-nemam-sliku">
+      </a>
+    </div>
+    <div class="media-body col-xs-9 col-s-10 col-md-11">
+      <h4 class="media-heading"><%= link_to recipe.name, recipe %></h4>
+<p><%= recipe.description %></p>
+<span class="badge"><%= recipe.time_to_cook%> minuta</span>
+
+<span>Rating:
+<% 1...recipe.rating.times do |s| %>
+<i class="fa fa-star-o"></i>
+<% end %>
+</span>
+
+<span>Skill:
+<% 1...recipe.skill.times do |s| %>
+<i class="fa fa-asterisk"></i>
+<% end %>
+</span>
+
+    </div>
+  </li>
+  <% end %>
+</ul>
